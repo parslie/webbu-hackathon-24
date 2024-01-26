@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/webbu-hackathon-24/static/css/main.1f9429d5.css",
-    "main.js": "/webbu-hackathon-24/static/js/main.e9e68dc2.js",
+    "main.css": "/webbu-hackathon-24/static/css/main.0ba59ea7.css",
+    "main.js": "/webbu-hackathon-24/static/js/main.dff80d04.js",
     "static/js/787.151e9665.chunk.js": "/webbu-hackathon-24/static/js/787.151e9665.chunk.js",
-    "static/media/logo.svg": "/webbu-hackathon-24/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/webbu-hackathon-24/index.html",
-    "main.1f9429d5.css.map": "/webbu-hackathon-24/static/css/main.1f9429d5.css.map",
-    "main.e9e68dc2.js.map": "/webbu-hackathon-24/static/js/main.e9e68dc2.js.map",
+    "main.0ba59ea7.css.map": "/webbu-hackathon-24/static/css/main.0ba59ea7.css.map",
+    "main.dff80d04.js.map": "/webbu-hackathon-24/static/js/main.dff80d04.js.map",
     "787.151e9665.chunk.js.map": "/webbu-hackathon-24/static/js/787.151e9665.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f9429d5.css",
-    "static/js/main.e9e68dc2.js"
+    "static/css/main.0ba59ea7.css",
+    "static/js/main.dff80d04.js"
   ]
 }
