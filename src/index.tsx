@@ -3,13 +3,23 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 
-import App from './App';
+import Layout from './pages/Layout';
 import './index.css';
 
 const router = createHashRouter([
   {
     path: '/',
-    element: <App />,
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <h1>Home page</h1>,
+      },
+      {
+        path: 'games',
+        element: <h1>Games page</h1>,
+      }
+    ],
   },
 ]);
 
