@@ -23,7 +23,8 @@ function Layout() {
           <NavButton to="/cart" label="Cart" />
           <NavButton to="/login" label="Login" />
           {/* TODO: only show when logged in */}
-          <NavButton to="/account" label="Account" />
+          {/* TODO: set id in url to logged in users */}
+          <NavButton to="/account/1" label="Account" />
         </div>
       </header>
       
