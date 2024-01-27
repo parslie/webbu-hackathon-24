@@ -1,13 +1,47 @@
 import { useState } from "react";
+import { login, register } from "../api/user";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [isRegistering, setIsRegistering] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const navigate = useNavigate();
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    if (isRegistering) {
-      // TODO
+  const onRegister = (e: React.FormEvent) => {
+    const target = e.target as typeof e.target & {
+      username: { value?: string },
+      email: { value?: string },
+      password: { value?: string },
+    }; 
+
+    if (target.username.value && target.email.value && target.password.value && 
+        register(target.username.value, target.email.value, target.password.value)) {
+      navigate("/");
     } else {
-      // TODO
+      setHasError(true);
+    }
+  };
+
+  const onLogin = (e: React.FormEvent) => {
+    const target = e.target as typeof e.target & {
+      email: { value?: string },
+      password: { value?: string },
+    };
+
+    if (target.email.value && target.password.value && 
+        login(target.email.value, target.password.value)) {
+      navigate("/");
+    } else {
+      setHasError(true);
+    }
+  };
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (isRegistering) {
+      onRegister(e);
+    } else {
+      onLogin(e);
     }
   };
 
@@ -34,16 +68,25 @@ function Login() {
                className="mb-5 rounded-sm 
                         border-[#a7a7a7] border-solid border-2" />
         
-        <label htmlFor="pass">Password</label>
-        <input id="pass" name="pass" type="password"
+        <label htmlFor="password">Password</label>
+        <input id="password" name="password" type="password"
                className="mb-5 rounded-sm 
                         border-[#a7a7a7] border-solid border-2" />
         
         <input type="submit" value={isRegistering ? "Register" : "Login"}
                className="bg-[#707070] rounded-md p-2 text-white font-bold" />
+        {hasError && (
+          <span className="text-sm max-w-56 mx-auto text-red-600 font-bold">
+            {isRegistering ? "A user with those credentials may already exist"
+                           : "A user with those credentials does not exist"}
+          </span>
+        )}
       </form>
 
-      <p onClick={() => setIsRegistering(!isRegistering)}
+      <p onClick={() => {
+        setIsRegistering(!isRegistering)
+        setHasError(false);
+      }}
          className="text-sm text-center cursor-pointer underline text-[#787878]">
         {isRegistering ? "Already have an account? Sign in here!"
                       : "Don't have an account? Sign up here!"}
