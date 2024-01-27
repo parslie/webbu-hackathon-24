@@ -1,11 +1,35 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
+
+function NavButton({ to, label }: { to: string, label: string }) {
+  return (
+    <NavLink to={to} className="flex items-center px-4 rounded-md bg-[#797979] text-white">
+      <span>{label}</span>
+    </NavLink>
+  );
+}
 
 function Layout() {
-    return (
-        <div>
-            <Outlet />
+  return (
+    <div>
+      <header className="grid grid-cols-header p-1 bg-[#d9d9d9]">
+        <div className="flex flex-row gap-1">
+          <NavButton to="/" label="Home" />
+          <NavButton to="/games" label="Games" />
         </div>
-    );
+
+        <h1 className="text-2xl">Parody Games</h1>
+
+        <div className="flex flex-row-reverse gap-1">
+          <NavButton to="/cart" label="Cart" />
+          <NavButton to="/login" label="Login" />
+          {/* TODO: only show when logged in */}
+          <NavButton to="/account" label="Account" />
+        </div>
+      </header>
+      
+      <Outlet />
+    </div>
+  );
 }
 
 export default Layout;
