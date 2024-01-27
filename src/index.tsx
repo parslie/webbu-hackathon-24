@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 
-import Layout from './pages/Layout';
 import './index.css';
+import Layout from './pages/Layout';
+import Home from './pages/Home';
+import Games from './pages/Games';
+import Account from './pages/Account';
 
 const router = createHashRouter([
   {
@@ -13,11 +16,15 @@ const router = createHashRouter([
     children: [
       {
         index: true,
-        element: <h1>Home page</h1>,
+        element: <Home />,
       },
       {
         path: 'games',
-        element: <h1>Games page</h1>,
+        element: <Games />,
+      },
+      {
+        path: 'account/:id',
+        element: <Account />,
       }
     ],
   },
