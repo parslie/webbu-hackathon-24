@@ -7,8 +7,9 @@ function Home() {
         <header className="relative overflow-hidden">
           <img src={headerImg} className="absolute top-[50%] left-[50%] 
                                           -translate-x-[50%] -translate-y-[50%]
-                                          -z-10"/>
-          <div className="w-max mx-auto my-12 p-2 bg-[#d9d9d9] rounded-lg">
+                                          -z-[1]"/>
+          <div className="w-max mx-auto my-12 p-2 bg-[#d9d9d9] rounded-lg
+                          relative z-10">
             <div className="bg-white flex flex-row">
               <img src={searchIcon} className="box-content w-10 pl-4 pr-2 py-2
                                                opacity-50" />

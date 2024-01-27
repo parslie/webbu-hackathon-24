@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 
 function NavButton({ to, label }: { to: string, label: string }) {
   return (
@@ -9,8 +9,11 @@ function NavButton({ to, label }: { to: string, label: string }) {
 }
 
 function Layout() {
+  const location = useLocation();
+  const whiteBackground = location.pathname == "/";
+
   return (
-    <div>
+    <div className={`min-h-screen ${whiteBackground ? "bg-white" : "bg-[#707070]"}`}>
       <header className="grid grid-cols-header p-1 bg-[#d9d9d9]">
         <div className="flex flex-row gap-1">
           <NavButton to="/" label="Home" />
