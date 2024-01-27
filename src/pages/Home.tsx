@@ -6,8 +6,7 @@ function Home() {
     <main>
         <header className="relative overflow-hidden">
           <img src={headerImg} className="absolute top-[50%] left-[50%] 
-                                          -translate-x-[50%] -translate-y-[50%]
-                                          -z-[1]"/>
+                                          -translate-x-[50%] -translate-y-[50%]"/>
           <div className="w-max mx-auto my-12 p-2 bg-[#d9d9d9] rounded-lg
                           relative z-10">
             <div className="bg-white flex flex-row">
