@@ -1,28 +1,28 @@
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 
-function NavButton({ to, label }: { to: string, label: string }) {
+function NavButton({ to, label }: { to: string; label: string }) {
   return (
-    <NavLink to={to} className="flex items-center px-4 rounded-md bg-[#797979] text-white">
+    <NavLink
+      to={to}
+      className=" p-4 text-center bg-amber-500 text-white hover:text-amber-500  hover:bg-white font-bold"
+    >
       <span>{label}</span>
     </NavLink>
   );
 }
 
 function Layout() {
-  const location = useLocation();
-  const whiteBackground = location.pathname == "/";
-
   return (
-    <div className={`min-h-screen ${whiteBackground ? "bg-white" : "bg-[#707070]"}`}>
-      <header className="grid grid-cols-header p-1 bg-[#d9d9d9]">
-        <div className="flex flex-row gap-1">
+    <>
+      <header className="grid grid-cols-header items-center bg-amber-500">
+        <div className="flex flex-row h-full">
           <NavButton to="/" label="Home" />
           <NavButton to="/games" label="Games" />
         </div>
-
-        <h1 className="text-2xl">Parody Games</h1>
-
-        <div className="flex flex-row-reverse gap-1">
+        <NavLink to="/" className="text-3xl font-extrabold text-white">
+          Parody Games
+        </NavLink>
+        <div className="flex flex-row-reverse h-full">
           <NavButton to="/cart" label="Cart" />
           <NavButton to="/login" label="Login" />
           {/* TODO: only show when logged in */}
@@ -30,9 +30,8 @@ function Layout() {
           <NavButton to="/account/1" label="Account" />
         </div>
       </header>
-      
       <Outlet />
-    </div>
+    </>
   );
 }
 
