@@ -10,9 +10,9 @@ function GameCard({ data }: { data: Game }) {
   return (
     <>
       <div className="overflow-hidden">
-        <div className="mx-4 mt-4 bg-white border-amber-500 border-2">
+        <div className="mx-6 mt-4 bg-white border-amber-500 border-2">
           <img
-            className="object-cover w-full h-52"
+            className="object-contain w-full h-64"
             alt="Box art"
             src={data.image}
           />
