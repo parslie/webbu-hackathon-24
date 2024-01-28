@@ -1,52 +1,15 @@
 import { useState } from "react";
 
-import { type GameCardData } from "../components/GameCard";
 import GameCard from "../components/GameCard";
 import MultiSlider from "../components/input/MultiRangeSlider";
+import { getAllGames } from "../api/games";
 
 function Games() {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(100);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const gameCards: GameCardData[] = [
-    {
-      name: "Uno",
-      price: 20.49,
-      image:
-        "https://cdn.mos.cms.futurecdn.net/39CUYMP8vJqHAYGVzUghBX-1200-80.jpg",
-    },
-    {
-      name: "Monopoly",
-      price: 29.99,
-      image:
-        "https://cdn.mos.cms.futurecdn.net/39CUYMP8vJqHAYGVzUghBX-1200-80.jpg",
-    },
-    {
-      name: "Muffin Time",
-      price: 29.99,
-      image:
-        "https://cdn.mos.cms.futurecdn.net/39CUYMP8vJqHAYGVzUghBX-1200-80.jpg",
-    },
-    {
-      name: "Chess",
-      price: 29.99,
-      image:
-        "https://cdn.mos.cms.futurecdn.net/39CUYMP8vJqHAYGVzUghBX-1200-80.jpg",
-    },
-    {
-      name: "Risk",
-      price: 29.99,
-      image:
-        "https://cdn.mos.cms.futurecdn.net/39CUYMP8vJqHAYGVzUghBX-1200-80.jpg",
-    },
-    {
-      name: "Diamant",
-      price: 29.99,
-      image:
-        "https://cdn.mos.cms.futurecdn.net/39CUYMP8vJqHAYGVzUghBX-1200-80.jpg",
-    },
-  ];
+  const games = getAllGames();
 
   return (
     <main className="grid grid-cols-gamepage grid-rows-gamepage gap-4 m-4 bg-orange-50">
@@ -89,7 +52,7 @@ function Games() {
       </div>
 
       <div className="col-start-2 row-start-2 grid grid-cols-autofit gap-16">
-        {gameCards.map((data, i) => (
+        {games.map((data, i) => (
           <GameCard data={data} key={i} />
         ))}
       </div>
