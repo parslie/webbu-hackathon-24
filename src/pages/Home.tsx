@@ -1,7 +1,11 @@
+import { getPopularGames } from "../api/games";
+import GameCard from "../components/GameCard";
 import headerImg from "../images/maxresdefault.jpg";
 import searchIcon from "../images/search-icon.webp";
 
 function Home() {
+  const popularGames = getPopularGames(5);
+
   return (
     <main>
       <header className="relative overflow-hidden">
@@ -15,11 +19,12 @@ function Home() {
         </div>
       </header>
 
-      {/* TODO: only show when logged in */}
       <article className="m-12 p-4 bg-[#787878] rounded-lg">
         <h2 className="text-lg font-bold text-white">Popular games</h2>
         <div className="grid grid-cols-autofit">
-          {/* TODO: fill with games */}
+          {popularGames.map((game, i) => (
+            <GameCard key={i} data={game} />
+          ))}
         </div>
       </article>
     </main>

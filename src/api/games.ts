@@ -17,7 +17,7 @@ function getAllGames() : Game[] {
     {
       id: 0,
       name: "The Mystery",
-      price: 29.99,
+      price: 24.99,
       image: theMystery,
       minPlayers: 2,
       maxPlayers: 10,
@@ -29,15 +29,15 @@ function getAllGames() : Game[] {
       image: planttopia,
       minPlayers: 2,
       maxPlayers: 10,
-      score: 4,
+      score: 1,
     },{
       id: 2,
       name: "I'm the Captain",
-      price: 29.99,
+      price: 19.99,
       image: imTheCaptain,
       minPlayers: 2,
       maxPlayers: 10,
-      score: 4,
+      score: 2,
     },
   ];
 }
