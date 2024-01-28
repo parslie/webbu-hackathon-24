@@ -17,6 +17,14 @@ function getAllUsers() : User[] {
   return users;
 }
 
+function getSelf() : User | null {
+  const userStr = localStorage.getItem(LOGGED_IN_USER_KEY);
+  if (userStr === null) {
+    return null;
+  }
+  return JSON.parse(userStr);
+}
+
 function isLoggedIn() : boolean {
   return localStorage.getItem(LOGGED_IN_USER_KEY) !== null;
 }
@@ -64,4 +72,4 @@ function register(username: string, email: string, password: string) : boolean {
   return true;
 }
 
-export { login, logout, register, type User };
+export { isLoggedIn, getSelf, login, logout, register, type User };

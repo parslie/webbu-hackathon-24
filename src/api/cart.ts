@@ -1,6 +1,8 @@
 import { Game } from "./games";
+import { getSelf, isLoggedIn } from "./user";
 
-const CART_KEY = "";
+const CART_KEY = "cart";
+const BUY_HISTORY_KEY = "buy_history";
 
 type CartItem = {
   id: number,
@@ -9,6 +11,12 @@ type CartItem = {
 };
 
 type Cart = CartItem[];
+
+type HistoryItem = {
+  id: number,
+  cart: Cart,
+  total: number,
+};
 
 function getCart() : Cart {
   const cartStr = localStorage.getItem(CART_KEY);
@@ -82,4 +90,39 @@ function setCartItemCount(game: Game, count: number) {
   }
 }
 
-export { getCart, addToCart, removeFromCart, setCartItemCount, type Cart, type CartItem };
+function getBuyHistory() : HistoryItem[] {
+  if (isLoggedIn()) {
+    let user = getSelf();
+    let historyStr = localStorage.getItem(BUY_HISTORY_KEY + user?.username);
+    let history: HistoryItem[] = [];
+    if (historyStr !== null) {
+      history = JSON.parse(historyStr);
+    }
+    return history;
+  } else {
+    return [];
+  }
+}
+
+function buyCartItems() {
+  if (isLoggedIn()) {
+    let user = getSelf();
+    let history = getBuyHistory();
+    let cart = getCart();
+    let total = 0;
+    cart.forEach((cartItem) => {
+      total += cartItem.count * cartItem.game.price;
+    });
+    history.push({
+      id: history.length,
+      cart: cart,
+      total: total,
+    })
+    const historyStr = JSON.stringify(history);
+    localStorage.setItem(BUY_HISTORY_KEY + user?.username, historyStr);
+  }
+
+  localStorage.removeItem(CART_KEY);
+}
+
+export { buyCartItems, getBuyHistory, getCart, addToCart, removeFromCart, setCartItemCount, type Cart, type CartItem };
