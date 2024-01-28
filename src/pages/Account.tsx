@@ -1,12 +1,15 @@
 import { useParams } from "react-router-dom";
 
 function Account() {
-  let { id } = useParams();
+  let { username } = useParams();
 
   return (
-    <main>
-      <h1>Konto #{id}</h1>
-      <h3>Här finns info om ett konto. Kanske möjlighet att redigera om man har tillgång.</h3>
+    <main className="m-4 bg-white">
+      <h1 className="">Weclome {username}</h1>
+      <div className="shadow-xl">
+        <h2>Köphistorik</h2>
+        <div>Reapeata det som köpts</div>
+      </div>
     </main>
   );
 }
