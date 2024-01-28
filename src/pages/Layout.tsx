@@ -13,7 +13,7 @@ function NavButton({ to, label }: { to: string; label: string }) {
 
 function Layout() {
   return (
-    <>
+    <div className=" bg-stone-900 min-h-screen">
       <header className="grid grid-cols-header items-center bg-amber-500">
         <div className="flex flex-row h-full">
           <NavButton to="/" label="Home" />
@@ -31,7 +31,7 @@ function Layout() {
         </div>
       </header>
       <Outlet />
-    </>
+    </div>
   );
 }
 
