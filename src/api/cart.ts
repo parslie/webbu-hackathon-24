@@ -82,4 +82,4 @@ function setCartItemCount(game: Game, count: number) {
   }
 }
 
-export { getCart, type Cart, type CartItem };
+export { getCart, addToCart, removeFromCart, setCartItemCount, type Cart, type CartItem };
