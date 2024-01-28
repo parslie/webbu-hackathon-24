@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/webbu-hackathon-24/static/css/main.61e4097b.css",
-    "main.js": "/webbu-hackathon-24/static/js/main.da59b277.js",
+    "main.css": "/webbu-hackathon-24/static/css/main.ae8683c4.css",
+    "main.js": "/webbu-hackathon-24/static/js/main.6ec6779b.js",
     "static/js/787.151e9665.chunk.js": "/webbu-hackathon-24/static/js/787.151e9665.chunk.js",
     "static/media/Wood-texture-1.jpg": "/webbu-hackathon-24/static/media/Wood-texture-1.c946cf6566ece3c1dcd2.jpg",
     "static/media/maxresdefault.jpg": "/webbu-hackathon-24/static/media/maxresdefault.7d7970d608acdf773a4b.jpg",
@@ -9,12 +9,12 @@
     "static/media/planttopia.png": "/webbu-hackathon-24/static/media/planttopia.501e1faa445fce35acda.png",
     "static/media/The mystery.png": "/webbu-hackathon-24/static/media/The mystery.415b0176a338dfd58dd2.png",
     "index.html": "/webbu-hackathon-24/index.html",
-    "main.61e4097b.css.map": "/webbu-hackathon-24/static/css/main.61e4097b.css.map",
-    "main.da59b277.js.map": "/webbu-hackathon-24/static/js/main.da59b277.js.map",
+    "main.ae8683c4.css.map": "/webbu-hackathon-24/static/css/main.ae8683c4.css.map",
+    "main.6ec6779b.js.map": "/webbu-hackathon-24/static/js/main.6ec6779b.js.map",
     "787.151e9665.chunk.js.map": "/webbu-hackathon-24/static/js/787.151e9665.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.61e4097b.css",
-    "static/js/main.da59b277.js"
+    "static/css/main.ae8683c4.css",
+    "static/js/main.6ec6779b.js"
   ]
 }
