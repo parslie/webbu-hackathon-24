@@ -6,7 +6,7 @@ function GameCard({ data }: { data: Game }) {
   const onBuy = () => {
     addToCart(data);
   };
-  
+
   return (
     <>
       <div className="overflow-hidden">
@@ -19,7 +19,10 @@ function GameCard({ data }: { data: Game }) {
           <div className="p-2 grid grid-cols-gamecard">
             <span className="font-bold">{data.name}</span>
             <span>${data.price}</span>
-            <button onClick={onBuy} className="col-start-2 row-start-1 row-end-3 fonts-bold px-6 rounded text-white bg-amber-500">
+            <button
+              onClick={onBuy}
+              className="col-start-2 row-start-1 row-end-3 fonts-bold px-6 rounded text-white bg-amber-500 hover:bg-white hover:text-amber-500 border-2 border-amber-500"
+            >
               Buy
             </button>
           </div>
