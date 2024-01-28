@@ -1,4 +1,5 @@
 import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { isLoggedIn } from "../api/user";
 
 function NavButton({ to, label }: { to: string; label: string }) {
   return (
@@ -24,10 +25,8 @@ function Layout() {
         </NavLink>
         <div className="flex flex-row-reverse h-full">
           <NavButton to="/cart" label="Cart" />
-          <NavButton to="/login" label="Login" />
-          {/* TODO: only show when logged in */}
-          {/* TODO: set id in url to logged in users */}
-          <NavButton to="/account" label="Account" />
+          {isLoggedIn() ? <NavButton to="/account" label="Account" />
+                        : <NavButton to="/login" label="Login" />}
         </div>
       </header>
       <Outlet />

@@ -125,4 +125,4 @@ function buyCartItems() {
   localStorage.removeItem(CART_KEY);
 }
 
-export { buyCartItems, getBuyHistory, getCart, addToCart, removeFromCart, setCartItemCount, type Cart, type CartItem };
+export { buyCartItems, getBuyHistory, getCart, addToCart, removeFromCart, setCartItemCount, type Cart, type CartItem, type HistoryItem };

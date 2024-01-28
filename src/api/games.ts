@@ -1,3 +1,7 @@
+import theMystery from "../images/The mystery.png";
+import planttopia from "../images/planttopia.png";
+import imTheCaptain from "../images/I'm the captain.png";
+
 type Game = {
   id: number,
   name: string,
@@ -12,44 +16,28 @@ function getAllGames() : Game[] {
   return [
     {
       id: 0,
-      name: "Uno",
+      name: "The Mystery",
       price: 29.99,
-      image: "",
+      image: theMystery,
       minPlayers: 2,
       maxPlayers: 10,
       score: 4,
     },{
       id: 1,
-      name: "Monopoly",
-      price: 39.99,
-      image: "",
+      name: "Planttopia",
+      price: 29.99,
+      image: planttopia,
       minPlayers: 2,
-      maxPlayers: 8,
-      score: 2,
+      maxPlayers: 10,
+      score: 4,
     },{
       id: 2,
-      name: "Cards Against Humanity",
+      name: "I'm the Captain",
       price: 29.99,
-      image: "",
-      minPlayers: 3,
-      maxPlayers: 8,
-      score: 3,
-    },{
-      id: 3,
-      name: "Chess",
-      price: 40.97,
-      image: "",
+      image: imTheCaptain,
       minPlayers: 2,
-      maxPlayers: 2,
-      score: 5,
-    },{
-      id: 4,
-      name: "Chinese checkers",
-      price: 40.97,
-      image: "",
-      minPlayers: 2,
-      maxPlayers: 6,
-      score: 2,
+      maxPlayers: 10,
+      score: 4,
     },
   ];
 }

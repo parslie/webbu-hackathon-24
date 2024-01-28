@@ -73,3 +73,4 @@ function Cart() {
 }
 
 export default Cart;
+export { CartItemCard };
