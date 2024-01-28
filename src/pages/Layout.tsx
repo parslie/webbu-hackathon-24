@@ -20,7 +20,7 @@ function Layout() {
           <NavButton to="/games" label="Games" />
         </div>
         <NavLink to="/" className="text-3xl font-extrabold text-white">
-          Parody Games
+          Generic Games
         </NavLink>
         <div className="flex flex-row-reverse h-full">
           <NavButton to="/cart" label="Cart" />
