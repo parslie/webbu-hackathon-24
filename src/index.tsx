@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import Games from './pages/Games';
 import Account from './pages/Account';
 import Login from './pages/Login';
+import Cart from './pages/Cart';
 
 const router = createHashRouter([
   {
@@ -24,12 +25,16 @@ const router = createHashRouter([
         element: <Games />,
       },
       {
-        path: 'account/:id',
+        path: 'account',
         element: <Account />,
       },
       {
         path: 'login',
         element: <Login />,
+      },
+      {
+        path: 'cart',
+        element: <Cart />
       }
     ],
   },
